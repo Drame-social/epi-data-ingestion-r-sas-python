@@ -1,0 +1,9 @@
+condition_name,total_cases,total_hospitalized,total_deaths,n_county_years,mean_rate_100k,hospitalization_rate,case_fatality_rate
+Cryptosporidium,112,33.0,1.0,88,1.81,29.5,0.89
+Campylobacter,108,36.0,2.0,82,1.85,33.3,1.85
+E. Coli O157:H7,104,31.0,4.0,86,1.73,29.8,3.85
+Hepatitis A,101,37.0,4.0,82,1.79,36.6,3.96
+Salmonella,97,27.0,1.0,77,1.57,27.8,1.03
+Listeria,94,25.0,2.0,70,1.49,26.6,2.13
+Vibrio,94,34.0,5.0,68,2.03,36.2,5.32
+Shigella,90,29.0,2.0,71,1.59,32.2,2.22

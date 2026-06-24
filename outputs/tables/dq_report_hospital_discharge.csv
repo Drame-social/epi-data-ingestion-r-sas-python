@@ -1,0 +1,5 @@
+dataset,check,n_affected,action,run_timestamp
+hospital_discharge,Duplicate MRN + admit_date,75,Removed; keep first occurrence,2026-06-22 02:07:55
+hospital_discharge,"Invalid age (< 0 or > 120; includes sentinels 999, -1)",22,Set to NULL,2026-06-22 02:07:55
+hospital_discharge,Non-standard sex codes,1415,Standardized to Male/Female/Unknown via mapping,2026-06-22 02:07:55
+hospital_discharge,Invalid ZIP codes (00000 or non-numeric),25,Flag zip_valid=0; retain original value,2026-06-22 02:07:55

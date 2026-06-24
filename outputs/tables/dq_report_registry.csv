@@ -1,0 +1,5 @@
+check,n_affected,action,dataset,run_timestamp
+Unparseable report_date,0,Set to NULL,reportable_disease_registry,2026-06-22 02:07:55
+Non-ISO date formats (MM/DD/YYYY),115,Parsed and converted to ISO 8601,reportable_disease_registry,2026-06-22 02:07:55
+Missing patient_age,10,Retained as NULL; flagged,reportable_disease_registry,2026-06-22 02:07:55
+Sex values,0,All valid — no action,reportable_disease_registry,2026-06-22 02:07:55
