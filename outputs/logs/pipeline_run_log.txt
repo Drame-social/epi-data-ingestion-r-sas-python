@@ -1,0 +1,272 @@
+2026-06-19 21:13:12,422  INFO      ============================================================
+2026-06-19 21:13:12,422  INFO      START: 01_ingest_hospital_discharge.py
+2026-06-19 21:13:12,422  INFO      ============================================================
+2026-06-19 21:13:12,427  INFO      Loaded 1,500 raw rows from /home/claude/projects/project2_epi_data_ingestion/data/raw/hospital_discharge_records.csv
+2026-06-19 21:13:12,429  INFO      DQ | Duplicate MRN + admit_date: 0 rows → Removed; keep first occurrence
+2026-06-19 21:13:12,430  INFO      After deduplication: 1,500 rows (removed 0)
+2026-06-19 21:13:12,441  INFO      DQ | Invalid age (< 0 or > 120; includes sentinels 999, -1): 25 rows → Set to NULL
+2026-06-19 21:13:12,445  INFO      DQ | Non-standard sex codes: 1493 rows → Standardized to Male/Female/Unknown via mapping
+2026-06-19 21:13:12,447  INFO      DQ | Invalid ZIP codes (00000 or non-numeric): 25 rows → Flag zip_valid=0; retain original value
+2026-06-19 21:13:12,462  INFO      Clean dataset saved: 1,500 rows → /home/claude/projects/project2_epi_data_ingestion/data/clean/hospital_discharge_clean.csv
+2026-06-19 21:13:12,464  INFO      Data quality summary:
+2026-06-19 21:13:12,464  INFO        Duplicate MRN + admit_date: n=0 → Removed; keep first occurrence
+2026-06-19 21:13:12,464  INFO        Invalid age (< 0 or > 120; includes sentinels 999, -1): n=25 → Set to NULL
+2026-06-19 21:13:12,464  INFO        Non-standard sex codes: n=1493 → Standardized to Male/Female/Unknown via mapping
+2026-06-19 21:13:12,464  INFO        Invalid ZIP codes (00000 or non-numeric): n=25 → Flag zip_valid=0; retain original value
+2026-06-19 21:13:12,464  INFO      END: 01_ingest_hospital_discharge.py
+2026-06-19 21:13:17,004  INFO      ============================================================
+2026-06-19 21:13:17,005  INFO      START: 02_ingest_disease_registry.py
+2026-06-19 21:13:17,005  INFO      ============================================================
+2026-06-19 21:13:17,008  INFO      Loaded 800 raw rows
+2026-06-19 21:13:17,017  INFO      Date parsing: 800/800 parsed successfully
+2026-06-19 21:13:17,034  INFO      Clean registry saved: 800 rows
+2026-06-19 21:13:17,036  INFO      END: 02_ingest_disease_registry.py
+2026-06-19 21:13:17,419  INFO      ============================================================
+2026-06-19 21:13:17,419  INFO      START: 03_merge_denominators.py
+2026-06-19 21:13:17,419  INFO      ============================================================
+2026-06-19 21:13:17,427  INFO      Registry: 800 rows
+2026-06-19 21:13:17,427  INFO      Denominators: 200 rows (50 counties, 4 years)
+2026-06-19 21:13:17,584  INFO      Aggregated: 800 county × year × condition rows
+2026-06-19 21:13:17,588  WARNING   798 rows have no matching denominator — rates will be NULL
+2026-06-19 21:13:17,595  INFO      Master incidence dataset saved: 800 rows → /home/claude/projects/project2_epi_data_ingestion/data/clean/master_incidence_dataset.csv
+2026-06-19 21:13:17,618  INFO      END: 03_merge_denominators.py
+2026-06-20 09:24:24,726  INFO      ============================================================
+2026-06-20 09:24:24,727  INFO      START: 01_ingest_hospital_discharge.py
+2026-06-20 09:24:24,727  INFO      ============================================================
+2026-06-20 09:24:24,731  INFO      Loaded 1,500 raw rows from /home/claude/projects/project2_epi_data_ingestion/data/raw/hospital_discharge_records.csv
+2026-06-20 09:24:24,732  INFO      DQ | Duplicate MRN + admit_date: 0 rows → Removed; keep first occurrence
+2026-06-20 09:24:24,733  INFO      After deduplication: 1,500 rows (removed 0)
+2026-06-20 09:24:24,742  INFO      DQ | Invalid age (< 0 or > 120; includes sentinels 999, -1): 25 rows → Set to NULL
+2026-06-20 09:24:24,745  INFO      DQ | Non-standard sex codes: 1493 rows → Standardized to Male/Female/Unknown via mapping
+2026-06-20 09:24:24,746  INFO      DQ | Invalid ZIP codes (00000 or non-numeric): 25 rows → Flag zip_valid=0; retain original value
+2026-06-20 09:24:24,757  INFO      Clean dataset saved: 1,500 rows → /home/claude/projects/project2_epi_data_ingestion/data/clean/hospital_discharge_clean.csv
+2026-06-20 09:24:24,759  INFO      Data quality summary:
+2026-06-20 09:24:24,759  INFO        Duplicate MRN + admit_date: n=0 → Removed; keep first occurrence
+2026-06-20 09:24:24,759  INFO        Invalid age (< 0 or > 120; includes sentinels 999, -1): n=25 → Set to NULL
+2026-06-20 09:24:24,759  INFO        Non-standard sex codes: n=1493 → Standardized to Male/Female/Unknown via mapping
+2026-06-20 09:24:24,760  INFO        Invalid ZIP codes (00000 or non-numeric): n=25 → Flag zip_valid=0; retain original value
+2026-06-20 09:24:24,760  INFO      END: 01_ingest_hospital_discharge.py
+2026-06-20 09:24:25,049  INFO      ============================================================
+2026-06-20 09:24:25,049  INFO      START: 02_ingest_disease_registry.py
+2026-06-20 09:24:25,049  INFO      ============================================================
+2026-06-20 09:24:25,053  INFO      Loaded 800 raw rows
+2026-06-20 09:24:25,069  INFO      Date parsing: 800/800 parsed successfully
+2026-06-20 09:24:25,082  INFO      Clean registry saved: 800 rows
+2026-06-20 09:24:25,084  INFO      END: 02_ingest_disease_registry.py
+2026-06-20 09:24:25,374  INFO      ============================================================
+2026-06-20 09:24:25,374  INFO      START: 03_merge_denominators.py
+2026-06-20 09:24:25,374  INFO      ============================================================
+2026-06-20 09:24:25,380  INFO      Registry: 800 rows
+2026-06-20 09:24:25,381  INFO      Denominators: 200 rows (50 counties, 4 years)
+2026-06-20 09:24:25,514  INFO      Aggregated: 800 county × year × condition rows
+2026-06-20 09:24:25,517  WARNING   798 rows have no matching denominator — rates will be NULL
+2026-06-20 09:24:25,522  INFO      Master incidence dataset saved: 800 rows → /home/claude/projects/project2_epi_data_ingestion/data/clean/master_incidence_dataset.csv
+2026-06-20 09:24:25,540  INFO      END: 03_merge_denominators.py
+2026-06-20 09:26:08,367  INFO      ============================================================
+2026-06-20 09:26:08,367  INFO      START: 01_ingest_hospital_discharge.py
+2026-06-20 09:26:08,367  INFO      ============================================================
+2026-06-20 09:26:08,371  INFO      Loaded 1,500 raw rows from /home/claude/projects/project2_epi_data_ingestion/data/raw/hospital_discharge_records.csv
+2026-06-20 09:26:08,373  INFO      DQ | Duplicate MRN + admit_date: 0 rows → Removed; keep first occurrence
+2026-06-20 09:26:08,374  INFO      After deduplication: 1,500 rows (removed 0)
+2026-06-20 09:26:08,381  INFO      DQ | Invalid age (< 0 or > 120; includes sentinels 999, -1): 25 rows → Set to NULL
+2026-06-20 09:26:08,384  INFO      DQ | Non-standard sex codes: 1493 rows → Standardized to Male/Female/Unknown via mapping
+2026-06-20 09:26:08,385  INFO      DQ | Invalid ZIP codes (00000 or non-numeric): 25 rows → Flag zip_valid=0; retain original value
+2026-06-20 09:26:08,396  INFO      Clean dataset saved: 1,500 rows → /home/claude/projects/project2_epi_data_ingestion/data/clean/hospital_discharge_clean.csv
+2026-06-20 09:26:08,398  INFO      Data quality summary:
+2026-06-20 09:26:08,398  INFO        Duplicate MRN + admit_date: n=0 → Removed; keep first occurrence
+2026-06-20 09:26:08,398  INFO        Invalid age (< 0 or > 120; includes sentinels 999, -1): n=25 → Set to NULL
+2026-06-20 09:26:08,398  INFO        Non-standard sex codes: n=1493 → Standardized to Male/Female/Unknown via mapping
+2026-06-20 09:26:08,398  INFO        Invalid ZIP codes (00000 or non-numeric): n=25 → Flag zip_valid=0; retain original value
+2026-06-20 09:26:08,398  INFO      END: 01_ingest_hospital_discharge.py
+2026-06-20 09:26:08,704  INFO      ============================================================
+2026-06-20 09:26:08,704  INFO      START: 02_ingest_disease_registry.py
+2026-06-20 09:26:08,704  INFO      ============================================================
+2026-06-20 09:26:08,707  INFO      Loaded 800 raw rows
+2026-06-20 09:26:08,714  INFO      Date parsing: 800/800 parsed successfully
+2026-06-20 09:26:09,037  INFO      ============================================================
+2026-06-20 09:26:09,037  INFO      START: 03_merge_denominators.py
+2026-06-20 09:26:09,037  INFO      ============================================================
+2026-06-20 09:26:09,043  INFO      Registry: 800 rows
+2026-06-20 09:26:09,044  INFO      Denominators: 200 rows (50 counties, 4 years)
+2026-06-20 09:26:09,176  INFO      Aggregated: 800 county × year × condition rows
+2026-06-20 09:26:09,178  WARNING   798 rows have no matching denominator — rates will be NULL
+2026-06-20 09:26:09,184  INFO      Master incidence dataset saved: 800 rows → /home/claude/projects/project2_epi_data_ingestion/data/clean/master_incidence_dataset.csv
+2026-06-20 09:26:09,202  INFO      END: 03_merge_denominators.py
+2026-06-20 09:26:25,914  INFO      ============================================================
+2026-06-20 09:26:25,914  INFO      START: 02_ingest_disease_registry.py
+2026-06-20 09:26:25,914  INFO      ============================================================
+2026-06-20 09:26:25,918  INFO      Loaded 800 raw rows
+2026-06-20 09:26:25,924  INFO      Date parsing: 800/800 parsed successfully
+2026-06-20 09:26:25,937  INFO      Clean registry saved: 800 rows
+2026-06-20 09:26:25,939  INFO      END: 02_ingest_disease_registry.py
+2026-06-20 09:26:26,259  INFO      ============================================================
+2026-06-20 09:26:26,260  INFO      START: 03_merge_denominators.py
+2026-06-20 09:26:26,260  INFO      ============================================================
+2026-06-20 09:26:26,266  INFO      Registry: 800 rows
+2026-06-20 09:26:26,266  INFO      Denominators: 200 rows (50 counties, 4 years)
+2026-06-20 09:26:26,374  INFO      Aggregated: 629 county × year × condition rows
+2026-06-20 09:26:26,382  INFO      Master incidence dataset saved: 629 rows → /home/claude/projects/project2_epi_data_ingestion/data/clean/master_incidence_dataset.csv
+2026-06-20 09:26:26,399  INFO      END: 03_merge_denominators.py
+2026-06-20 09:31:02,272  INFO      ============================================================
+2026-06-20 09:31:02,272  INFO      START: 01_ingest_hospital_discharge.py
+2026-06-20 09:31:02,272  INFO      ============================================================
+2026-06-20 09:31:02,276  INFO      Loaded 1,500 raw rows from /home/claude/projects/project2_epi_data_ingestion/data/raw/hospital_discharge_records.csv
+2026-06-20 09:31:02,277  INFO      DQ | Duplicate MRN + admit_date: 0 rows → Removed; keep first occurrence
+2026-06-20 09:31:02,278  INFO      After deduplication: 1,500 rows (removed 0)
+2026-06-20 09:31:02,285  INFO      DQ | Invalid age (< 0 or > 120; includes sentinels 999, -1): 25 rows → Set to NULL
+2026-06-20 09:31:02,287  INFO      DQ | Non-standard sex codes: 1493 rows → Standardized to Male/Female/Unknown via mapping
+2026-06-20 09:31:02,289  INFO      DQ | Invalid ZIP codes (00000 or non-numeric): 25 rows → Flag zip_valid=0; retain original value
+2026-06-20 09:31:02,300  INFO      Clean dataset saved: 1,500 rows → /home/claude/projects/project2_epi_data_ingestion/data/clean/hospital_discharge_clean.csv
+2026-06-20 09:31:02,301  INFO      Data quality summary:
+2026-06-20 09:31:02,302  INFO        Duplicate MRN + admit_date: n=0 → Removed; keep first occurrence
+2026-06-20 09:31:02,302  INFO        Invalid age (< 0 or > 120; includes sentinels 999, -1): n=25 → Set to NULL
+2026-06-20 09:31:02,302  INFO        Non-standard sex codes: n=1493 → Standardized to Male/Female/Unknown via mapping
+2026-06-20 09:31:02,302  INFO        Invalid ZIP codes (00000 or non-numeric): n=25 → Flag zip_valid=0; retain original value
+2026-06-20 09:31:02,302  INFO      END: 01_ingest_hospital_discharge.py
+2026-06-20 09:31:02,591  INFO      ============================================================
+2026-06-20 09:31:02,591  INFO      START: 02_ingest_disease_registry.py
+2026-06-20 09:31:02,591  INFO      ============================================================
+2026-06-20 09:31:02,594  INFO      Loaded 800 raw rows
+2026-06-20 09:31:02,600  INFO      Date parsing: 800/800 parsed successfully
+2026-06-20 09:31:02,612  INFO      Clean registry saved: 800 rows
+2026-06-20 09:31:02,614  INFO      END: 02_ingest_disease_registry.py
+2026-06-20 09:31:02,899  INFO      ============================================================
+2026-06-20 09:31:02,899  INFO      START: 03_merge_denominators.py
+2026-06-20 09:31:02,899  INFO      ============================================================
+2026-06-20 09:31:02,905  INFO      Registry: 800 rows
+2026-06-20 09:31:02,905  INFO      Denominators: 200 rows (50 counties, 4 years)
+2026-06-20 09:31:03,011  INFO      Aggregated: 629 county × year × condition rows
+2026-06-20 09:31:03,018  INFO      Master incidence dataset saved: 629 rows → /home/claude/projects/project2_epi_data_ingestion/data/clean/master_incidence_dataset.csv
+2026-06-20 09:31:03,034  INFO      END: 03_merge_denominators.py
+2026-06-21 18:28:41,905  INFO      ============================================================
+2026-06-21 18:28:41,906  INFO      START: 01_ingest_hospital_discharge.py
+2026-06-21 18:28:41,906  INFO      ============================================================
+2026-06-21 18:28:41,911  INFO      Loaded 1,500 raw rows from /home/claude/projects/project2_epi_data_ingestion/data/raw/hospital_discharge_records.csv
+2026-06-21 18:28:41,914  INFO      DQ | Duplicate MRN + admit_date: 0 rows → Removed; keep first occurrence
+2026-06-21 18:28:41,915  INFO      After deduplication: 1,500 rows (removed 0)
+2026-06-21 18:28:41,926  INFO      DQ | Invalid age (< 0 or > 120; includes sentinels 999, -1): 25 rows → Set to NULL
+2026-06-21 18:28:41,930  INFO      DQ | Non-standard sex codes: 1493 rows → Standardized to Male/Female/Unknown via mapping
+2026-06-21 18:28:41,933  INFO      DQ | Invalid ZIP codes (00000 or non-numeric): 25 rows → Flag zip_valid=0; retain original value
+2026-06-21 18:28:41,949  INFO      Clean dataset saved: 1,500 rows → /home/claude/projects/project2_epi_data_ingestion/data/clean/hospital_discharge_clean.csv
+2026-06-21 18:28:41,951  INFO      Data quality summary:
+2026-06-21 18:28:41,952  INFO        Duplicate MRN + admit_date: n=0 → Removed; keep first occurrence
+2026-06-21 18:28:41,952  INFO        Invalid age (< 0 or > 120; includes sentinels 999, -1): n=25 → Set to NULL
+2026-06-21 18:28:41,952  INFO        Non-standard sex codes: n=1493 → Standardized to Male/Female/Unknown via mapping
+2026-06-21 18:28:41,952  INFO        Invalid ZIP codes (00000 or non-numeric): n=25 → Flag zip_valid=0; retain original value
+2026-06-21 18:28:41,952  INFO      END: 01_ingest_hospital_discharge.py
+2026-06-21 18:28:42,333  INFO      ============================================================
+2026-06-21 18:28:42,333  INFO      START: 02_ingest_disease_registry.py
+2026-06-21 18:28:42,333  INFO      ============================================================
+2026-06-21 18:28:42,337  INFO      Loaded 800 raw rows
+2026-06-21 18:28:42,345  INFO      Date parsing: 800/800 parsed successfully
+2026-06-21 18:28:42,363  INFO      Clean registry saved: 800 rows
+2026-06-21 18:28:42,365  INFO      END: 02_ingest_disease_registry.py
+2026-06-21 18:28:42,740  INFO      ============================================================
+2026-06-21 18:28:42,740  INFO      START: 03_merge_denominators.py
+2026-06-21 18:28:42,740  INFO      ============================================================
+2026-06-21 18:28:42,749  INFO      Registry: 800 rows
+2026-06-21 18:28:42,749  INFO      Denominators: 200 rows (50 counties, 4 years)
+2026-06-21 18:28:42,877  INFO      Aggregated: 629 county × year × condition rows
+2026-06-21 18:28:42,887  INFO      Master incidence dataset saved: 629 rows → /home/claude/projects/project2_epi_data_ingestion/data/clean/master_incidence_dataset.csv
+2026-06-21 18:28:42,909  INFO      END: 03_merge_denominators.py
+2026-06-21 18:32:52,114  INFO      ============================================================
+2026-06-21 18:32:52,114  INFO      START: 01_ingest_hospital_discharge.py
+2026-06-21 18:32:52,114  INFO      ============================================================
+2026-06-21 18:32:52,119  INFO      Loaded 1,500 raw rows from /home/claude/projects/project2_epi_data_ingestion/data/raw/hospital_discharge_records.csv
+2026-06-21 18:32:52,121  INFO      DQ | Duplicate MRN + admit_date: 75 rows → Removed; keep first occurrence
+2026-06-21 18:32:52,123  INFO      After deduplication: 1,425 rows (removed 75)
+2026-06-21 18:32:52,131  INFO      DQ | Invalid age (< 0 or > 120; includes sentinels 999, -1): 22 rows → Set to NULL
+2026-06-21 18:32:52,135  INFO      DQ | Non-standard sex codes: 1415 rows → Standardized to Male/Female/Unknown via mapping
+2026-06-21 18:32:52,137  INFO      DQ | Invalid ZIP codes (00000 or non-numeric): 25 rows → Flag zip_valid=0; retain original value
+2026-06-21 18:32:52,152  INFO      Clean dataset saved: 1,425 rows → /home/claude/projects/project2_epi_data_ingestion/data/clean/hospital_discharge_clean.csv
+2026-06-21 18:32:52,153  INFO      Data quality summary:
+2026-06-21 18:32:52,154  INFO        Duplicate MRN + admit_date: n=75 → Removed; keep first occurrence
+2026-06-21 18:32:52,154  INFO        Invalid age (< 0 or > 120; includes sentinels 999, -1): n=22 → Set to NULL
+2026-06-21 18:32:52,154  INFO        Non-standard sex codes: n=1415 → Standardized to Male/Female/Unknown via mapping
+2026-06-21 18:32:52,154  INFO        Invalid ZIP codes (00000 or non-numeric): n=25 → Flag zip_valid=0; retain original value
+2026-06-21 18:32:52,154  INFO      END: 01_ingest_hospital_discharge.py
+2026-06-21 18:32:55,351  INFO      ============================================================
+2026-06-21 18:32:55,351  INFO      START: 02_ingest_disease_registry.py
+2026-06-21 18:32:55,351  INFO      ============================================================
+2026-06-21 18:32:55,354  INFO      Loaded 800 raw rows
+2026-06-21 18:32:55,362  INFO      Date parsing: 800/800 parsed successfully
+2026-06-21 18:32:55,379  INFO      Clean registry saved: 800 rows
+2026-06-21 18:32:55,381  INFO      END: 02_ingest_disease_registry.py
+2026-06-21 18:32:55,732  INFO      ============================================================
+2026-06-21 18:32:55,732  INFO      START: 03_merge_denominators.py
+2026-06-21 18:32:55,732  INFO      ============================================================
+2026-06-21 18:32:55,740  INFO      Registry: 800 rows
+2026-06-21 18:32:55,740  INFO      Denominators: 200 rows (50 counties, 4 years)
+2026-06-21 18:32:55,866  INFO      Aggregated: 624 county × year × condition rows
+2026-06-21 18:32:55,876  INFO      Master incidence dataset saved: 624 rows → /home/claude/projects/project2_epi_data_ingestion/data/clean/master_incidence_dataset.csv
+2026-06-21 18:32:55,896  INFO      END: 03_merge_denominators.py
+2026-06-21 18:33:15,134  INFO      ============================================================
+2026-06-21 18:33:15,134  INFO      START: 03_merge_denominators.py
+2026-06-21 18:33:15,134  INFO      ============================================================
+2026-06-21 18:33:15,142  INFO      Registry: 800 rows
+2026-06-21 18:33:15,142  INFO      Denominators: 200 rows (50 counties, 4 years)
+2026-06-21 18:33:15,277  INFO      Aggregated: 624 county × year × condition rows
+2026-06-21 18:33:15,290  INFO      Master incidence dataset saved: 624 rows → /home/claude/projects/project2_epi_data_ingestion/data/clean/master_incidence_dataset.csv
+2026-06-21 18:33:15,319  INFO      END: 03_merge_denominators.py
+2026-06-21 18:38:48,182  INFO      ============================================================
+2026-06-21 18:38:48,182  INFO      START: 01_ingest_hospital_discharge.py
+2026-06-21 18:38:48,182  INFO      ============================================================
+2026-06-21 18:38:48,187  INFO      Loaded 1,500 raw rows from /home/claude/projects/project2_epi_data_ingestion/data/raw/hospital_discharge_records.csv
+2026-06-21 18:38:48,190  INFO      DQ | Duplicate MRN + admit_date: 75 rows → Removed; keep first occurrence
+2026-06-21 18:38:48,192  INFO      After deduplication: 1,425 rows (removed 75)
+2026-06-21 18:38:48,200  INFO      DQ | Invalid age (< 0 or > 120; includes sentinels 999, -1): 22 rows → Set to NULL
+2026-06-21 18:38:48,204  INFO      DQ | Non-standard sex codes: 1415 rows → Standardized to Male/Female/Unknown via mapping
+2026-06-21 18:38:48,206  INFO      DQ | Invalid ZIP codes (00000 or non-numeric): 25 rows → Flag zip_valid=0; retain original value
+2026-06-21 18:38:48,221  INFO      Clean dataset saved: 1,425 rows → /home/claude/projects/project2_epi_data_ingestion/data/clean/hospital_discharge_clean.csv
+2026-06-21 18:38:48,222  INFO      Data quality summary:
+2026-06-21 18:38:48,223  INFO        Duplicate MRN + admit_date: n=75 → Removed; keep first occurrence
+2026-06-21 18:38:48,223  INFO        Invalid age (< 0 or > 120; includes sentinels 999, -1): n=22 → Set to NULL
+2026-06-21 18:38:48,223  INFO        Non-standard sex codes: n=1415 → Standardized to Male/Female/Unknown via mapping
+2026-06-21 18:38:48,223  INFO        Invalid ZIP codes (00000 or non-numeric): n=25 → Flag zip_valid=0; retain original value
+2026-06-21 18:38:48,223  INFO      END: 01_ingest_hospital_discharge.py
+2026-06-21 18:38:48,639  INFO      ============================================================
+2026-06-21 18:38:48,639  INFO      START: 02_ingest_disease_registry.py
+2026-06-21 18:38:48,639  INFO      ============================================================
+2026-06-21 18:38:48,643  INFO      Loaded 800 raw rows
+2026-06-21 18:38:48,650  INFO      Date parsing: 800/800 parsed successfully
+2026-06-21 18:38:48,667  INFO      Clean registry saved: 800 rows
+2026-06-21 18:38:48,669  INFO      END: 02_ingest_disease_registry.py
+2026-06-21 18:38:49,099  INFO      ============================================================
+2026-06-21 18:38:49,099  INFO      START: 03_merge_denominators.py
+2026-06-21 18:38:49,099  INFO      ============================================================
+2026-06-21 18:38:49,107  INFO      Registry: 800 rows
+2026-06-21 18:38:49,108  INFO      Denominators: 200 rows (50 counties, 4 years)
+2026-06-21 18:38:49,233  INFO      Aggregated: 624 county × year × condition rows
+2026-06-21 18:38:49,243  INFO      Master incidence dataset saved: 624 rows → /home/claude/projects/project2_epi_data_ingestion/data/clean/master_incidence_dataset.csv
+2026-06-21 18:38:49,265  INFO      END: 03_merge_denominators.py
+2026-06-22 02:07:55,547  INFO      ============================================================
+2026-06-22 02:07:55,547  INFO      START: 01_ingest_hospital_discharge.py
+2026-06-22 02:07:55,547  INFO      ============================================================
+2026-06-22 02:07:55,552  INFO      Loaded 1,500 raw rows from /home/claude/projects/project2_epi_data_ingestion/data/raw/hospital_discharge_records.csv
+2026-06-22 02:07:55,553  INFO      DQ | Duplicate MRN + admit_date: 75 rows → Removed; keep first occurrence
+2026-06-22 02:07:55,555  INFO      After deduplication: 1,425 rows (removed 75)
+2026-06-22 02:07:55,564  INFO      DQ | Invalid age (< 0 or > 120; includes sentinels 999, -1): 22 rows → Set to NULL
+2026-06-22 02:07:55,567  INFO      DQ | Non-standard sex codes: 1415 rows → Standardized to Male/Female/Unknown via mapping
+2026-06-22 02:07:55,569  INFO      DQ | Invalid ZIP codes (00000 or non-numeric): 25 rows → Flag zip_valid=0; retain original value
+2026-06-22 02:07:55,579  INFO      Clean dataset saved: 1,425 rows → /home/claude/projects/project2_epi_data_ingestion/data/clean/hospital_discharge_clean.csv
+2026-06-22 02:07:55,581  INFO      Data quality summary:
+2026-06-22 02:07:55,581  INFO        Duplicate MRN + admit_date: n=75 → Removed; keep first occurrence
+2026-06-22 02:07:55,581  INFO        Invalid age (< 0 or > 120; includes sentinels 999, -1): n=22 → Set to NULL
+2026-06-22 02:07:55,581  INFO        Non-standard sex codes: n=1415 → Standardized to Male/Female/Unknown via mapping
+2026-06-22 02:07:55,582  INFO        Invalid ZIP codes (00000 or non-numeric): n=25 → Flag zip_valid=0; retain original value
+2026-06-22 02:07:55,582  INFO      END: 01_ingest_hospital_discharge.py
+2026-06-22 02:07:55,907  INFO      ============================================================
+2026-06-22 02:07:55,907  INFO      START: 02_ingest_disease_registry.py
+2026-06-22 02:07:55,907  INFO      ============================================================
+2026-06-22 02:07:55,910  INFO      Loaded 800 raw rows
+2026-06-22 02:07:55,916  INFO      Date parsing: 800/800 parsed successfully
+2026-06-22 02:07:55,930  INFO      Clean registry saved: 800 rows
+2026-06-22 02:07:55,932  INFO      END: 02_ingest_disease_registry.py
+2026-06-22 02:07:56,264  INFO      ============================================================
+2026-06-22 02:07:56,264  INFO      START: 03_merge_denominators.py
+2026-06-22 02:07:56,265  INFO      ============================================================
+2026-06-22 02:07:56,271  INFO      Registry: 800 rows
+2026-06-22 02:07:56,272  INFO      Denominators: 200 rows (50 counties, 4 years)
+2026-06-22 02:07:56,364  INFO      Aggregated: 624 county × year × condition rows
+2026-06-22 02:07:56,373  INFO      Master incidence dataset saved: 624 rows → /home/claude/projects/project2_epi_data_ingestion/data/clean/master_incidence_dataset.csv
+2026-06-22 02:07:56,393  INFO      END: 03_merge_denominators.py
