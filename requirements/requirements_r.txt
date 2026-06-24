@@ -1,0 +1,11 @@
+# R package dependencies for project2_epi_data_ingestion
+# Install in R: install.packages(c(...)) or use renv
+
+# Core packages
+tidyverse>=2.0.0     # dplyr, tidyr, readr, ggplot2, purrr, stringr
+lubridate>=1.9.0     # date parsing
+janitor>=2.2.0       # clean_names(), tabyl()
+here>=1.0.1          # project-relative paths
+
+# Recommended for reproducibility
+# renv (use renv::init() and renv::snapshot())
