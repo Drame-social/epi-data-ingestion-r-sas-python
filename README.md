@@ -1,14 +1,6 @@
 # Data Ingestion Processes with R, SAS, and Python
 
-**Author:** Aly Drame, MD, MPH, MBA  
-**Languages:** Python · R · SAS  
-**Domain:** Epidemiological surveillance, public health data pipelines  
-**Data:** Fully synthetic — generated for portfolio demonstration
-
-[![Python 3.12](https://img.shields.io/badge/Python-3.12-blue)](https://www.python.org/)
-[![R tidyverse](https://img.shields.io/badge/R-tidyverse-blue)](https://www.tidyverse.org/)
-[![SAS 9.4](https://img.shields.io/badge/SAS-9.4-blue)](https://www.sas.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+*By Aly Drame, MD, MPH, MBA.* A county-level foodborne/enteric disease ingestion pipeline built three ways — Python (primary), R, and SAS — to compare how each language handles messy, multi-source surveillance data. All inputs are synthetic (generated with `seed=123`); no real patients, counties, or case counts.
 
 ---
 
@@ -46,7 +38,7 @@ The same ingestion logic is implemented in all three languages to allow direct c
 |---------|----------|--------------|------------|
 | Hospital discharge | True MRN + admit_date duplicates (billing re-submissions) | 75 (5%) | Remove; keep first occurrence → 1,425 clean rows |
 | Hospital discharge | Invalid age sentinels (999, -1) and out-of-range | 22 | Set to NULL |
-| Hospital discharge | Non-standard sex codes (M, F, U, Male, 1, 2, MALE) | 1,415 rows standardised | Standardise to Male/Female/Unknown |
+| Hospital discharge | Non-standard sex values injected (Male, 1, 2, MALE) | 20 | Recode all sex values to Male/Female/Unknown |
 | Hospital discharge | Invalid ZIP codes (00000) | 25 | Flag `zip_valid=0`; retain original |
 | Disease registry | Mixed date formats (ISO 8601 and MM/DD/YYYY) | 115 (14%) | Parse both; convert to standard datetime |
 
@@ -150,7 +142,7 @@ Update `%let root = ...` in each script to your project path, then submit in ord
 |-------|-----------|--------|
 | Duplicate MRN + admit_date | 75 | Removed; 1,425 clean rows remain |
 | Invalid age (sentinels 999, -1) | 22 | Set to NULL |
-| Non-standard sex codes | 1,415 | Standardised to Male/Female/Unknown |
+| Non-standard sex values injected | 20 | Whole column recoded to Male/Female/Unknown |
 | Invalid ZIP code (00000) | 25 | Flagged; value retained |
 
 ### County-level incidence rates by condition (2020–2023)
